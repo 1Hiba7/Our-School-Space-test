@@ -126,6 +126,7 @@ input:-webkit-autofill,input:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 100
 .fade-r:not(.fade-l){-webkit-mask-image:linear-gradient(to left,transparent,#000 34px);mask-image:linear-gradient(to left,transparent,#000 34px)}
 .fade-l.fade-r{-webkit-mask-image:linear-gradient(to right,transparent,#000 34px,#000 calc(100% - 34px),transparent);mask-image:linear-gradient(to right,transparent,#000 34px,#000 calc(100% - 34px),transparent)}
 @media(max-width:700px){.nav.fx{-webkit-mask-image:none!important;mask-image:none!important}}
+body::after{content:'نسخة تجريبية';position:fixed;bottom:10px;left:10px;z-index:300;background:#c0392b;color:#fff;font-weight:800;font-size:.75rem;padding:4px 10px;border-radius:999px;opacity:.9;pointer-events:none}
 </style>
 </head>
 <body>
@@ -168,13 +169,13 @@ input:-webkit-autofill,input:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 100
 
 <div id="modal" class="modal-bg" onclick="if(event.target===this&&!this.dataset.lock)closeModal()"><div class="modal" id="modalContent"></div></div><div id="toast" class="toast"></div><div id="authGate" class="auth-gate"></div>
 <script>
-const KEY='masahatuna-school-v3';
+const KEY='masahatuna-TEST-v1';
 /* ===== إعدادات المزامنة (اختيارية) =====
    اتركي FIREBASE_CONFIG = null ليعمل الموقع محليًا (البيانات في هذا المتصفح فقط).
    للمزامنة بين كل الأجهزة: أنشئي مشروع Firebase وفعّلي Authentication (Email/Password) و Firestore،
    ثم الصقي هنا كائن الإعدادات: {apiKey:'...',authDomain:'...',projectId:'...',appId:'...'}
    MANAGER_EMAIL: بريد المديرة. إن تُرك فارغًا فأول حساب يُنشأ يصبح حساب المديرة. */
-const FIREBASE_CONFIG={apiKey:"AIzaSyCXaHUdWmfI2i0ao8lLcL-H6P4sz4upQgw",authDomain:"our-school-space-hiba.firebaseapp.com",projectId:"our-school-space-hiba",storageBucket:"our-school-space-hiba.firebasestorage.app",messagingSenderId:"177249999704",appId:"1:177249999704:web:03a69cd2b6320b7a47632d"};
+const FIREBASE_CONFIG={apiKey:"AIzaSyA5VGWMaLccSi_Y6o8o9fvIdqMKhR0doG4",authDomain:"our-school-space.firebaseapp.com",projectId:"our-school-space",storageBucket:"our-school-space.firebasestorage.app",messagingSenderId:"548711601525",appId:"1:548711601525:web:99103032cf3e1210346f3c"};
 const MANAGER_EMAIL='hibakittaneh3@gmail.com';
 let cloud=false,db=null,auth=null,ref=null,lastSynced=localStorage.getItem(KEY+'-base'),signupBusy=false,authResolved=!FIREBASE_CONFIG,authBusy=false;
 let cloudReadyRes;const cloudReady=new Promise(r=>cloudReadyRes=r);
